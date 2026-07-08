@@ -415,11 +415,7 @@ h2 {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to top,
-    rgba(11, 79, 58, 0.55),
-    rgba(11, 79, 58, 0.05)
-  );
+
   opacity: 0;
   transition: opacity 0.3s ease;
   pointer-events: none;
@@ -579,11 +575,12 @@ h2 {
 }
 
 /* SUP */
+/* SUP */
 .sup-section {
   position: relative;
   min-height: 650px;
-  margin-top: 7rem;
-  padding: 8rem 5vw;
+  margin: 7rem -5vw 0;
+  padding: 6rem 0;
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -601,23 +598,30 @@ h2 {
 .sup-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to right,
-    rgba(11, 79, 58, 0.9),
-    rgba(11, 79, 58, 0.45),
-    rgba(11, 79, 58, 0.15)
-  );
+  background:
+    linear-gradient(
+      to right,
+      rgba(7, 40, 30, 0.58) 0%,
+      rgba(7, 40, 30, 0.32) 35%,
+      rgba(7, 40, 30, 0.12) 65%,
+      transparent 100%
+    ),
+    linear-gradient(to top, rgba(0, 0, 0, 0.12), transparent 45%);
 }
 
 .sup-content {
   position: relative;
   z-index: 2;
+  margin-left: 13vw;
   max-width: 620px;
 }
 
 .sup-content h2 {
   color: var(--white);
-  font-size: clamp(2.6rem, 6vw, 5rem);
+  font-size: clamp(2.6rem, 6vw, 3.9rem);
+  text-shadow:
+    0 3px 10px rgba(0, 0, 0, 0.35),
+    0 10px 35px rgba(0, 0, 0, 0.25);
   line-height: 1;
   margin-bottom: 1.2rem;
 }
@@ -625,21 +629,19 @@ h2 {
 .sup-content p {
   color: rgba(255, 255, 255, 0.82);
   font-size: 1.05rem;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
   line-height: 1.8;
 }
 
 .sup-badge {
-  display: inline-flex;
-  margin-top: 1rem;
-  padding: 0.75rem 1.2rem;
-  border: 1px solid rgba(216, 155, 29, 0.55);
-  border-radius: 999px;
-  color: var(--gold);
   font-family: var(--font-heading), sans-serif;
-  font-size: 0.75rem;
-  font-weight: 800;
-  letter-spacing: 0.12em;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
+  color: var(--gold);
+  display: block;
+  margin-bottom: 0.8rem;
 }
 
 /* YOUR WEEKEND */
