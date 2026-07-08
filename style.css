@@ -37,7 +37,7 @@ body {
 /* NAV */
 
 nav#navbar {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
@@ -51,18 +51,6 @@ nav#navbar {
   justify-content: space-between;
 
   background: transparent;
-  transition:
-    background 0.3s ease,
-    height 0.3s ease,
-    box-shadow 0.3s ease;
-}
-
-nav#navbar.scrolled {
-  height: 72px;
-  background: rgba(11, 79, 58, 0.92);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
 }
 
 .nav-logo {
@@ -92,9 +80,7 @@ nav#navbar.scrolled {
   color: rgba(255, 255, 255, 0.9);
   text-decoration: none;
   white-space: nowrap;
-  transition:
-    color 0.2s ease,
-    opacity 0.2s ease;
+  transition: color 0.2s ease;
 }
 
 .nav-link:hover {
@@ -104,7 +90,6 @@ nav#navbar.scrolled {
 .nav-link--cta {
   background: var(--gold);
   box-shadow: 0 8px 25px rgba(216, 155, 29, 0.35);
-
   color: var(--white);
   padding: 0.75rem 1.35rem;
   border-radius: 999px;
@@ -119,31 +104,81 @@ nav#navbar.scrolled {
   color: var(--night);
   transform: translateY(-1px);
 }
+.nav-toggle {
+  display: none;
+
+  width: 44px;
+
+  height: 44px;
+
+  border: 0;
+
+  background: transparent;
+
+  cursor: pointer;
+
+  z-index: 120;
+}
+
+.nav-toggle span {
+  display: block;
+
+  width: 26px;
+
+  height: 2px;
+
+  margin: 6px auto;
+
+  background: var(--white);
+
+  border-radius: 999px;
+
+  transition: 0.25s ease;
+}
 
 @media (max-width: 768px) {
-  nav#navbar {
-    height: 74px;
-    padding: 0 1.2rem;
-  }
-
-  .nav-logo img {
-    height: 48px;
+  .nav-toggle {
+    display: block;
   }
 
   .nav-links {
-    gap: 0.9rem;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 72vw;
+    max-width: 300px;
+    height: 100dvh;
+
+    padding: 6rem 1.8rem 2rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.4rem;
+
+    background: rgba(11, 79, 58, 0.97);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
   }
 
+  .nav-links.open {
+    transform: translateX(0);
+  }
+
+  .nav-link,
   .nav-link:not(.nav-link--cta) {
-    display: none;
+    display: block;
+    font-size: 0.85rem;
   }
 
   .nav-link--cta {
-    font-size: 0.68rem;
-    padding: 0.65rem 1rem;
+    margin-top: 0.7rem;
+    padding: 0.8rem 1.3rem;
   }
 }
-
 /* HERO */
 #hero {
   position: relative;
@@ -1065,7 +1100,7 @@ h2 {
     padding: 1rem 1.2rem;
   }
   .nav-links {
-    display: none;
+    display: flex;
   }
   #hero {
     align-items: center;

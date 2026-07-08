@@ -6,11 +6,23 @@ setTimeout(() => {
   document.getElementById("heroBg").classList.add("loaded");
 }, 150);
 
-// Navbar background on scroll
-const navbar = document.getElementById("navbar");
+const navToggle = document.getElementById("navToggle");
+const navLinks = document.getElementById("navLinks");
 
+navToggle.addEventListener("click", () => {
+  navToggle.classList.toggle("open");
+  navLinks.classList.toggle("open");
+});
+
+navLinks.querySelectorAll("a").forEach((link) => {
+  link.addEventListener("click", () => {
+    navToggle.classList.remove("open");
+    navLinks.classList.remove("open");
+  });
+});
 window.addEventListener("scroll", () => {
-  navbar.classList.toggle("scrolled", window.scrollY > 60);
+  navToggle.classList.remove("open");
+  navLinks.classList.remove("open");
 });
 
 // Reveal sections on scroll
