@@ -266,6 +266,9 @@ nav#navbar {
 .hero-title em {
   color: var(--gold);
   font-style: normal;
+  font-size: 0.4em;
+
+  display: block;
 }
 .hero-meta {
   display: flex;
@@ -609,7 +612,6 @@ h2 {
   }
 }
 
-/* SUP */
 /* SUP */
 .sup-section {
   position: relative;
@@ -985,6 +987,64 @@ h2 {
   }
 }
 
+/* BOOKING */
+.booking-widget {
+  max-width: 950px;
+  margin: 3rem auto;
+}
+.booking {
+  max-width: 900px;
+  margin: auto;
+  padding: 120px 20px 80px;
+  text-align: center;
+}
+
+.booking h1 {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 7vw, 5rem);
+  color: var(--night);
+  margin: 1rem 0;
+}
+
+.booking-text {
+  max-width: 600px;
+  margin: 0 auto 3rem;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.booking-widget {
+  background: white;
+  padding: 2rem;
+  border-radius: 24px;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.08);
+}
+
+.booking-back {
+  display: inline-block;
+  margin-bottom: 2rem;
+  text-decoration: none;
+  color: var(--night);
+  font-weight: 600;
+}
+
+.booking-footer {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.booking-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.booking-links a {
+  text-decoration: none;
+  color: var(--night);
+}
+
 /* FOOTER */
 
 .footer {
@@ -1077,43 +1137,247 @@ h2 {
 }
 
 @media (max-width: 768px) {
-  .footer-info {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    text-align: center;
+  /* GENERELLT */
+
+  section {
+    padding: 4rem 1.2rem;
   }
 
-  .footer-socials {
-    justify-content: center;
+  h2 {
+    font-size: 2rem;
   }
-}
-/* RESPONSIVE */
-@media (max-width: 768px) {
-  #about {
-    grid-template-columns: 1fr;
-    gap: 3rem;
+
+  /* EXPERIENCE */
+
+  .experience-section {
+    padding: 4rem 1.2rem;
   }
-  .about-stats {
-    grid-template-columns: 1fr 1fr;
+
+  .experience-intro {
+    margin-bottom: 2.2rem;
   }
-  nav {
-    padding: 1rem 1.2rem;
+
+  .experience-intro h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
   }
-  .nav-links {
-    display: flex;
+
+  .experience-intro p {
+    font-size: 0.95rem;
+    line-height: 1.65;
   }
-  #hero {
-    align-items: center;
-    padding-top: 4rem;
+
+  .text-link {
+    margin-top: 1.4rem;
   }
-  .hero-content {
-    padding: 0 1.2rem 5vh;
+
+  .experience-gallery {
+    gap: 1rem;
   }
-  .days-nav {
-    overflow-x: auto;
+
+  .experience-image,
+  .experience-image--large {
+    height: 220px;
+    border-radius: 18px;
   }
-  .day-tab {
+
+  /* INCLUDED */
+
+  .includes-section {
+    padding: 1rem 4rem;
+  }
+
+  .includes-header {
+    margin-bottom: 2.5rem;
+  }
+
+  .includes-header h2 {
+    font-size: 2.15rem;
+  }
+
+  .includes-header p {
+    font-size: 0.95rem;
+    line-height: 1.65;
+  }
+
+  .includes-grid {
+    gap: 1rem;
+  }
+
+  .include-card {
+    padding: 1.4rem;
+    border-radius: 18px;
+  }
+
+  .include-card i {
+    font-size: 2.3rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .include-card h3 {
+    font-size: 1.05rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .include-card p {
+    font-size: 0.88rem;
+    line-height: 1.55;
+  }
+
+  /* SUP VIDEO */
+
+  .sup-section {
+    min-height: 460px;
+    margin-top: 4rem;
+    padding: 4rem 0;
+    border-radius: 20px;
+  }
+
+  .sup-content {
+    margin-left: 0;
+    padding: 0 1.5rem;
+    max-width: 100%;
+  }
+
+  .sup-content h2 {
+    font-size: 2.2rem;
+  }
+
+  .sup-content p {
+    font-size: 0.95rem;
+    line-height: 1.65;
+  }
+
+  /* JOURNEY */
+
+  .journey-divider {
+    margin: 3.5rem auto 1.5rem;
+    gap: 1rem;
+  }
+
+  .journey-divider p {
+    font-size: 0.72rem;
     white-space: nowrap;
+  }
+
+  .journey-intro {
+    margin-bottom: 2.5rem;
+  }
+
+  .journey-intro h2 {
+    font-size: 2.15rem;
+  }
+
+  .journey-intro p {
+    font-size: 0.95rem;
+    line-height: 1.65;
+  }
+
+  .journey-list {
+    gap: 1rem;
+  }
+
+  .journey-row {
+    min-height: 0;
+    border-radius: 20px;
+  }
+
+  .journey-row-image {
+    min-height: 0;
+    height: 150px;
+  }
+
+  .journey-row-content {
+    padding: 1.5rem;
+  }
+
+  .journey-day {
+    margin-bottom: 0.7rem;
+  }
+
+  .journey-row-content h3 {
+    font-size: 1.55rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .journey-row-content p {
+    font-size: 0.9rem;
+    line-height: 1.65;
+  }
+
+  .journey-toggle {
+    margin-top: 1.2rem;
+  }
+
+  /* PRICING */
+
+  .pricing-section {
+    padding: 1rem 3rem;
+  }
+
+  .pricing-header {
+    margin-bottom: 1rem;
+  }
+
+  .pricing-header h2 {
+    font-size: 2.2rem;
+  }
+
+  .pricing-header p {
+    font-size: 0.95rem;
+    line-height: 1.65;
+  }
+
+  .pricing-grid {
+    gap: 1rem;
+  }
+
+  .price-card {
+    padding: 1.3rem;
+    border-radius: 20px;
+  }
+
+  .price-tag {
+    margin-bottom: 0.8rem;
+  }
+
+  .price-card h3 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .price {
+    margin-bottom: 1rem;
+  }
+
+  .price span {
+    font-size: 2.8rem;
+  }
+
+  .price small {
+    font-size: 0.6rem;
+  }
+
+  .price-card p {
+    font-size: 0.9rem;
+    line-height: 1.65;
+    min-height: auto;
+  }
+
+  /* BOOKING */
+
+  .booking {
+    padding: 50px 0.2rem 6px;
+  }
+
+  .booking-widget {
+    border-radius: 50px;
+  }
+
+  /* FOOTER */
+
+  .footer {
+    padding: 2.5rem 1.2rem 1rem;
   }
 }
 
