@@ -48,7 +48,70 @@ journeyToggles.forEach((button) => {
     row.classList.toggle("active");
   });
 });
+const activitySlider = document.querySelector(".activity-slider");
 
+if (activitySlider) {
+  const track = activitySlider.querySelector(".activity-slider__track");
+  const slides = [...activitySlider.querySelectorAll(".activity-slide")];
+  const previousButton = activitySlider.querySelector(
+    ".activity-slider__arrow--previous",
+  );
+  const nextButton = activitySlider.querySelector(
+    ".activity-slider__arrow--next",
+  );
+  const dots = [...activitySlider.querySelectorAll(".activity-slider__dot")];
+  const currentNumber = activitySlider.querySelector(
+    ".activity-slider__current",
+  );
+
+  let currentSlide = 0;
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  function updateSlider(newIndex) {
+    currentSlide = (newIndex + slides.length) % slides.length;
+
+    track.style.transform = `translateX(-${currentSlide * 100}%)`;
+
+    slides.forEach((slide, index) => {
+      const video = slide.querySelector("video");
+      const isActive = index === currentSlide;
+
+      slide.classList.toggle("is-active", isActive);
+
+      if (!video) return;
+
+      if (isActive) {
+        video.play().catch(() => {
+          // Webbläsaren kan blockera autoplay i vissa situationer.
+        });
+      } else {
+        video.pause();
+      }
+    });
+
+    dots.forEach((dot, index) => {
+      dot.classList.toggle("is-active", index === currentSlide);
+    });
+
+    currentNumber.textContent = String(currentSlide + 1).padStart(2, "0");
+  }
+
+  previousButton.addEventListener("click", () => {
+    updateSlider(currentSlide - 1);
+  });
+
+  nextButton.addEventListener("click", () => {
+    updateSlider(currentSlide + 1);
+  });
+
+  dots.forEach((dot, index) => {
+    dot.addEventListener("click", () => {
+      updateSlider(index);
+    });
+  });
+  updateSlider(0);
+}
 revealOnScroll();
 
 // Run on scroll

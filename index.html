@@ -146,24 +146,103 @@
         </div>
       </div>
 
-      <!-- SUP HIGHLIGHT -->
-      <section class="sup-section">
-        <video class="sup-video" autoplay muted loop playsinline>
-          <source src="videos/sup-short.mp4" type="video/mp4" />
-        </video>
+      <section class="activity-slider reveal" aria-label="Water activities">
+        <div class="activity-slider__viewport">
+          <div class="activity-slider__track">
+            <!-- SLIDE 1 -->
+            <article class="activity-slide is-active">
+              <video
+                class="activity-slide__video"
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="metadata"
+              >
+                <source src="videos/sup-short.mp4" type="video/mp4" />
+              </video>
 
-        <div class="sup-overlay"></div>
+              <div class="activity-slide__overlay"></div>
 
-        <div class="sup-content reveal">
-          <span class="sup-badge">New for Island Experience 3.0</span>
-          <h2>Stand-Up Paddleboard Experience</h2>
-          <p>
-            Explore Ghana’s coastline from a new perspective with guided SUP
-            sessions led by certified lifeguards and water activity instructors.
-          </p>
+              <div class="activity-slide__content">
+                <span class="activity-slide__eyebrow">
+                  New for Island Experience 3.0
+                </span>
+
+                <h2>Stand-Up Paddleboard Experience</h2>
+
+                <p>
+                  Explore Ghana’s coastline from a new perspective with guided
+                  SUP sessions led by certified lifeguards and water activity
+                  instructors.
+                </p>
+              </div>
+            </article>
+
+            <!-- SLIDE 2 -->
+            <article class="activity-slide">
+              <video
+                class="activity-slide__video"
+                muted
+                loop
+                playsinline
+                preload="metadata"
+              >
+                <source src="videos/jetski.mp4" type="video/mp4" />
+              </video>
+
+              <div class="activity-slide__overlay"></div>
+
+              <div class="activity-slide__content">
+                <span class="activity-slide__eyebrow">
+                  Available on request
+                </span>
+
+                <h2>Extra Activites</h2>
+              </div>
+            </article>
+          </div>
+
+          <!-- PILAR -->
+          <button
+            class="activity-slider__arrow activity-slider__arrow--previous"
+            type="button"
+            aria-label="Previous activity"
+          >
+            <i class="ph ph-arrow-left"></i>
+          </button>
+
+          <button
+            class="activity-slider__arrow activity-slider__arrow--next"
+            type="button"
+            aria-label="Next activity"
+          >
+            <i class="ph ph-arrow-right"></i>
+          </button>
+
+          <!-- SLIDE-NUMMER -->
+          <div class="activity-slider__counter" aria-hidden="true">
+            <span class="activity-slider__current">01</span>
+            <span class="activity-slider__counter-line"></span>
+            <span>02</span>
+          </div>
+
+          <!-- PRICKAR -->
+          <div class="activity-slider__dots">
+            <button
+              class="activity-slider__dot is-active"
+              type="button"
+              aria-label="Show paddleboard experience"
+            ></button>
+
+            <button
+              class="activity-slider__dot"
+              type="button"
+              aria-label="Show jet ski experience"
+            ></button>
+          </div>
         </div>
       </section>
-
       <div id="itinerary" class="journey-divider reveal">
         <span></span>
         <p>Your Weekend</p>
